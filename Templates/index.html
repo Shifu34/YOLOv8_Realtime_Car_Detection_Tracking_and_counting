@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle In/Out Counts</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
+</head>
+<body>
+    <div class="header">
+        <h1>Vehicle In/Out Counts Dashboard</h1>
+    </div>
+    <div class="dashboard">
+        <div class="tile">
+            <div class="tile-heading">Vehicle In</div>
+            <div class="tile-content" id="in-count">0</div>
+        </div>
+        <div class="tile">
+            <div class="tile-heading">Vehicle Out</div>
+            <div class="tile-content" id="out-count">0</div>
+        </div>
+    </div>
+    <h2 class="stream-heading">Live Video Stream</h2>
+    <div class="image">
+        <img id="video_stream" width="640" height="480">
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js"></script>
+    <script>
+        var socket = io.connect(window.location.origin);
+
+        socket.on('vehicle_counts', function(data) {
+            document.getElementById('in-count').innerText = data.in;
+            document.getElementById('out-count').innerText = data.out;
+        });
+
+        // Event handler for receiving new video frames
+        socket.on('frame', function (frame) {
+            console.log("socket frame: done....");
+            image = 'data:image/jpeg;base64,' + frame;
+            document.getElementById('video_stream').src = image;
+        });
+    </script>
+    <div class="footer">
+        <h2>Realtime Detection</h2>
+    </div>
+</body>
+</html>
