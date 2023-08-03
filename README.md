@@ -1,4 +1,4 @@
-<H1 align="center"> YOLOv8_Realtime_Car_Detection_Tracking_and_counting</H1>
+<H1 align="center"> YOLOv8 Realtime Car Detection Tracking and Counting</H1>
 
 ## Description:
   In this realtime car detection we are using YOLOV8 model also known as Ultralytics, for the detection of vehicles and deep_sort_pytorch.
@@ -55,3 +55,7 @@
 ## Final Output on Webpage:
 ![Webpage_output_1 ](https://github.com/Shifu34/YOLOv8_Realtime_Car_Detection_Tracking_and_counting/assets/140503589/d6ad6440-dbab-4f8b-8b83-c632bf088f31)
 ![Webpage_output_2](https://github.com/Shifu34/YOLOv8_Realtime_Car_Detection_Tracking_and_counting/assets/140503589/6ef8a55f-316b-4bc3-b6a7-85bf2200354d)
+
+## Credit:
+  - https://github.com/MuhammadMoinFaisal
+    
