@@ -47,4 +47,4 @@ def on_connect():
 if __name__ == '__main__':
     # Initialize SocketIO with the Flask app and run the application in debug mode
     socketio.init_app(app)
-    socketio.run(app, debug=True)
+    socketio.run(app)
