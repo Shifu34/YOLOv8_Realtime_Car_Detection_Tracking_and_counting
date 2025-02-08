@@ -1,5 +1,4 @@
 import main
-import predict
 import json
 
 import threading
